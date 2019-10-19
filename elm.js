@@ -5401,6 +5401,7 @@ var rtfeldman$elm_css$Css$column = _Utils_update(
 var rtfeldman$elm_css$Css$displayFlex = A2(rtfeldman$elm_css$Css$property, 'display', 'flex');
 var rtfeldman$elm_css$Css$flexDirection = rtfeldman$elm_css$Css$prop1('flex-direction');
 var rtfeldman$elm_css$Css$flexGrow = rtfeldman$elm_css$Css$prop1('flex-grow');
+var rtfeldman$elm_css$Css$fontSize = rtfeldman$elm_css$Css$prop1('font-size');
 var rtfeldman$elm_css$Css$UnitlessInteger = {$: 'UnitlessInteger'};
 var rtfeldman$elm_css$Css$int = function (val) {
 	return {
@@ -5423,6 +5424,8 @@ var rtfeldman$elm_css$Css$justifyContent = function (fn) {
 		'justify-content',
 		fn(rtfeldman$elm_css$Css$Internal$lengthForOverloadedProperty));
 };
+var rtfeldman$elm_css$Css$RemUnits = {$: 'RemUnits'};
+var rtfeldman$elm_css$Css$rem = A2(rtfeldman$elm_css$Css$Internal$lengthConverter, rtfeldman$elm_css$Css$RemUnits, 'rem');
 var rtfeldman$elm_css$VirtualDom$Styled$Node = F3(
 	function (a, b, c) {
 		return {$: 'Node', a: a, b: b, c: c};
@@ -7342,7 +7345,15 @@ var author$project$Main$content = function (model) {
 					[
 						A2(
 						rtfeldman$elm_css$Html$Styled$div,
-						_List_Nil,
+						_List_fromArray(
+							[
+								rtfeldman$elm_css$Html$Styled$Attributes$css(
+								_List_fromArray(
+									[
+										rtfeldman$elm_css$Css$fontSize(
+										rtfeldman$elm_css$Css$rem(10))
+									]))
+							]),
 						_List_fromArray(
 							[
 								rtfeldman$elm_css$Html$Styled$text(

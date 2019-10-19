@@ -11,8 +11,10 @@ import Css
         , displayFlex
         , flexDirection
         , flexGrow
+        , fontSize
         , int
         , justifyContent
+        , rem
         , rgb
         )
 import Digit exposing (Digit)
@@ -88,7 +90,7 @@ content model =
                     ]
                 ]
                 [ div
-                    []
+                    [ css [ fontSize (rem 10) ] ]
                     [ Digit.toArabic digit |> text ]
                 ]
             ]
